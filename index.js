@@ -189,7 +189,7 @@ const TodosListHeader = () => {
 const TodosListFooter = () => {
   return (
     <div>
-     <p>Note:&nbsp;&nbsp;Green = "done"; Red = "pending". <br/>
+     <p>Note:&nbsp;&nbsp;Green = "done"; Red = "pending"... <br/>
         &emsp;&emsp;&nbsp;&nbsp;&nbsp;Click on task to toggle status.</p>
     </div>
   );
