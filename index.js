@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import _ from 'lodash';
 
+// new class App
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -33,9 +34,13 @@ class App extends React.Component {
     this.setState({todos: this.state.todos});
   }
   render () {
+    var myStyle = {
+      color: "#ff8000",
+      fontSize: 30
+    }
     return (
       <div>
-        <h2>React ToDos App</h2>
+        <pre style={myStyle}>Things Todo App</pre>
         <CreateTodo createTask={this.createTask.bind(this)}/>
         <TodosList 
           todos={this.state.todos} 
@@ -50,17 +55,24 @@ class App extends React.Component {
 App.defaultProps = {
   todos: [
     {task:  'exercise a lot',
-     isCompleted:  false
+     isCompleted:  false,
+     isEditing: false
     },
-    {task: 'eat dinner',
-     isCompleted:  true
+    {task: 'eat lunch',
+     isCompleted:  false,
+     isEditing: false
+    },
+    {task: 'buy donuts',
+     isCompleted:  true,
+     isEditing: false
     }
   ]
 }
 
+//new class CreateTodo
 class CreateTodo extends React.Component {
-  handleCreate(event) {
-    event.preventDefault();
+  handleCreate(e) {
+    e.preventDefault();
     this.props.createTask(this.refs.createInput.value);
     this.refs.createInput.value = '';
   }
@@ -74,7 +86,7 @@ class CreateTodo extends React.Component {
     );
   }
 }
-CreateTodo.defaultProps = {
+CreateTodo.propTypes = {
   createTask: React.PropTypes.func.isRequired
 }
 
@@ -82,9 +94,7 @@ class TodosList extends React.Component {
   renderItems() {
     const props = _.omit(this.props, 'todos');
     return (
-    this.props.todos.map((todo, index) => <TodosListItem key={index} {...todo} {...props}/> )
-   // _.map(this.props.todos, 
-   // (todo, index) => <TodosListItem key={index} {...todo} {...props}/> )
+      this.props.todos.map((todo, index) => <TodosListItems key={index} {...todo} {...props}/> )
     );
   }
   render () {
@@ -101,22 +111,25 @@ class TodosList extends React.Component {
     );
   }
 }
+TodosList.propTypes = {
+  todos: React.PropTypes.array.isRequired
+}
 TodosList.defaultProps = {
-  todos: React.PropTypes.array.isRequired,
-  toggleTask:  React.PropTypes.func.isRequired,
-  saveTask: React.PropTypes.func.isRequired,
-  deleteTask: React.PropTypes.func.isRequired
+  todos: []
 }
 
-class TodosListItem extends React.Component {
-  constructor() {
-    super();
+
+// new class TodosListItem
+class TodosListItems extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
-      isEditing: false
+      isEditing: this.props.isEditing
     };
+    console.log(this.props.isEditing);
   }
-  onSaveClick(event) {
-    event.preventDefault();
+  onSaveClick(e) {
+    e.preventDefault();
     const oldTask = this.props.task;
     const newTask = this.refs.editInput.value;
     this.props.saveTask(oldTask, newTask);
@@ -174,7 +187,17 @@ class TodosListItem extends React.Component {
     );
   }
 }
+TodosListItems.propTypes = {
+  todos: React.PropTypes.array.isRequired,
+  toggleTask:  React.PropTypes.func.isRequired,
+  saveTask: React.PropTypes.func.isRequired,
+  deleteTask: React.PropTypes.func.isRequired
+}
+TodosListItems.defaultProps = {
+  todos: []
+}
 
+// new object function
 const TodosListHeader = () => {
   return (
     <thead>
@@ -186,13 +209,16 @@ const TodosListHeader = () => {
   );
 }
 
+// new object function
 const TodosListFooter = () => {
   return (
     <div>
-     <p>Note:&nbsp;&nbsp;Green = "done"; Red = "pending"... <br/>
-        &emsp;&emsp;&nbsp;&nbsp;&nbsp;Click on task to toggle status.</p>
+     <p>Status:&nbsp;&nbsp;Green = "done"; Red = "pending" <br/>
+        &emsp;&emsp;&emsp;&nbsp;Click on task to toggle status.</p>
     </div>
   );
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
+
+
