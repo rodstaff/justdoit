@@ -35,26 +35,31 @@ class App extends React.Component {
   }
   render () {
     var myStyle = {
-      color: "#ff8000",
+      color: "#088da5",
       fontSize: 30
     }
     return (
-      <div>
-        <pre style={myStyle}>Things Todo App</pre>
-        <CreateTodo createTask={this.createTask.bind(this)}/>
-        <TodosList 
-          todos={this.state.todos} 
-          toggleTask={this.toggleTask.bind(this)}
-          saveTask={this.saveTask.bind(this)}
-          deleteTask={this.deleteTask.bind(this)}
-        />
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4 col-sm-offset-4">
+            <h2 style={myStyle}>React Todos App</h2>
+            <CreateTodo createTask={this.createTask.bind(this)}/>
+            &nbsp;
+            <TodosList 
+              todos={this.state.todos} 
+              toggleTask={this.toggleTask.bind(this)}
+              saveTask={this.saveTask.bind(this)}
+              deleteTask={this.deleteTask.bind(this)}
+            />
+          </div>
+        </div>
       </div>
     );
   }
 }
 App.defaultProps = {
   todos: [
-    {task:  'exercise a lot',
+    {task:  'exercise',
      isCompleted:  false,
      isEditing: false
     },
@@ -78,11 +83,13 @@ class CreateTodo extends React.Component {
   }
   render () {
     return (
-      <form onSubmit={this.handleCreate.bind(this)}>
-        <input type="text" placeholder="Reminder: To Do List" 
+
+      <form class="form-inline" onSubmit={this.handleCreate.bind(this)}>
+        <input type="text" class="form-control" placeholder="Reminder: To Do List" 
           ref="createInput"/>
-        <button>Create</button>
+        <button type="submit" class="btn btn-primary">Create</button>
       </form>
+
     );
   }
 }
@@ -100,13 +107,13 @@ class TodosList extends React.Component {
   render () {
     return (
       <div>
-      <table>
-        <TodosListHeader />
-        <tbody>
-          {this.renderItems()}
-        </tbody>
-      </table>
-      <TodosListFooter />
+        <table>
+          <TodosListHeader />
+          <tbody>
+            {this.renderItems()}
+          </tbody>
+        </table>
+        <TodosListFooter />
       </div>
     );
   }
@@ -167,14 +174,14 @@ class TodosListItems extends React.Component {
     if (this.state.isEditing) {
       return (
         <td>
-          <button onClick={this.onSaveClick.bind(this)}>Save</button>
-          <button onClick={this.onCancelClick.bind(this)}>Cancel</button>
+          <button type="submit" class="btn btn-success btn-sm" onClick={this.onSaveClick.bind(this)}>Save</button>
+          <button type="submit" class="btn btn-warning btn-sm" onClick={this.onCancelClick.bind(this)}>Cancel</button>
         </td>
       );
     } return (
         <td>
-          <button onClick={this.onEditClick.bind(this)}>Edit</button>
-          <button onClick={this.props.deleteTask.bind(this, this.props.task)}>Delete</button>
+          <button type="submit" class="btn btn-info btn-sm" onClick={this.onEditClick.bind(this)}>Edit</button>
+          <button type="submit" class="btn btn-danger btn-sm" onClick={this.props.deleteTask.bind(this, this.props.task)}>Delete</button>
         </td>
       );
   }
@@ -213,8 +220,8 @@ const TodosListHeader = () => {
 const TodosListFooter = () => {
   return (
     <div>
-     <p>Status:&nbsp;&nbsp;Green = "done"; Red = "pending" <br/>
-        &emsp;&emsp;&emsp;&nbsp;Click on task to toggle status.</p>
+     <p></p>
+     <p>Status: Green = "done"; Red = "pending"; Click on task to change status.</p>
     </div>
   );
 }
