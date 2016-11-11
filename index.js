@@ -47,7 +47,7 @@ class App extends React.Component {
       <div class="container-fluid">
         <div class="row">
           <div style={myStyle2} class="col-sm-4 col-sm-offset-4">
-            <h2 class="text-center" style={myStyle1}>Just Do It !!!</h2>
+            <h2 class="text-left" style={myStyle1}>Just Do It !!!</h2>
             <CreateTodo createTask={this.createTask.bind(this)}/>
             &nbsp;
             <TodosList 
