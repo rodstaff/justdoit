@@ -1,7 +1,7 @@
 module.exports = {
   entry: './',  
   output: {
-  path: './public',
+  path: '../todos-react-heroku',
   filename: 'bundle.js'
   },
   devtool:  'inline-source-map',

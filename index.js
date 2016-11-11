@@ -34,7 +34,7 @@ class App extends React.Component {
     this.setState({todos: this.state.todos});
   }
   render () {
-    var myStyle = {
+    var myStyle1 = {
       color: "#088da5",
       fontSize: 30
     }
@@ -42,7 +42,7 @@ class App extends React.Component {
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-4 col-sm-offset-4">
-            <h2 style={myStyle}>React Todos App</h2>
+            <h2 style={myStyle1}>React Todos App</h2>
             <CreateTodo createTask={this.createTask.bind(this)}/>
             &nbsp;
             <TodosList 
@@ -85,7 +85,7 @@ class CreateTodo extends React.Component {
     return (
 
       <form class="form-inline" onSubmit={this.handleCreate.bind(this)}>
-        <input type="text" class="form-control" placeholder="Reminder: To Do List" 
+        <input type="text" class="form-control" placeholder="ToDos:&nbsp;&nbsp;Type Here" 
           ref="createInput"/>
         <button type="submit" class="btn btn-primary">Create</button>
       </form>
