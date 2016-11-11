@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import _ from 'lodash';
+import _ from 'lodash'
 
 // new class App
 class App extends React.Component {
