@@ -42,7 +42,7 @@ class App extends React.Component {
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-4 col-sm-offset-4">
-            <h2 style={myStyle1}>React Todos App</h2>
+            <h2 style={myStyle1}>Just Do It !!!</h2>
             <CreateTodo createTask={this.createTask.bind(this)}/>
             &nbsp;
             <TodosList 
@@ -59,16 +59,20 @@ class App extends React.Component {
 }
 App.defaultProps = {
   todos: [
-    {task:  'exercise',
+    {task:  'wake up early',
      isCompleted:  false,
      isEditing: false
     },
-    {task: 'eat lunch',
+    {task: 'exercise',
      isCompleted:  false,
      isEditing: false
     },
-    {task: 'buy donuts',
-     isCompleted:  true,
+    {task: 'hug your spouse',
+     isCompleted:  false,
+     isEditing: false
+    },
+    {task: 'do awesome work!',
+     isCompleted:  false,
      isEditing: false
     }
   ]
@@ -85,7 +89,7 @@ class CreateTodo extends React.Component {
     return (
 
       <form class="form-inline" onSubmit={this.handleCreate.bind(this)}>
-        <input type="text" class="form-control" placeholder="ToDos:&nbsp;&nbsp;Type Here" 
+        <input type="text" class="form-control" placeholder="ToDos:&nbsp;&nbsp;type here..." 
           ref="createInput"/>
         <button type="submit" class="btn btn-primary">Create</button>
       </form>
@@ -221,7 +225,7 @@ const TodosListFooter = () => {
   return (
     <div>
      <p></p>
-     <p>Status: Green = "done"; Red = "pending"; Click on task to change status.</p>
+     <h5>Status: Green = "done"; Red = "pending"; Click on task to change status.</h5>
     </div>
   );
 }
