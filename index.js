@@ -1,7 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import _ from 'lodash'
-
+import coconuts from './public/images/coconut_trees.jpeg'
+import moons from './public/images/moon_stars.jpeg'
+import sun from './public/images/sun.jpeg'
+ 
 // new class App
 class App extends React.Component {
   constructor(props) {
@@ -34,20 +37,51 @@ class App extends React.Component {
     this.setState({todos: this.state.todos});
   }
   render () {
-    var myStyle1 = {
+
+    var myStyle1_1 = {
+      backgroundColor: "#ccffcc",
+      borderRadius: 15,
+      border: "1px dashed black",  
+      marginTop: 30,
+      fontFamily: 'Ravi Prakash'
+    }
+    var myStyle1_2 = {
       color: "#000066",
       fontSize: 30
     }
-    var myStyle2 = {
-      backgroundColor: "#ccffcc",
+    var myStyle2_1 = {
+      backgroundColor: "#ffd9cc",
       borderRadius: 15,
-      marginTop: 30
+      border: "1px double black",  
+      marginTop: 30,
+      fontFamily: 'Oswald'
     }
+    var myStyle2_2 = {
+      color: "#000066",
+      fontSize: 30
+    }
+    var myStyle3_1 = {
+      backgroundColor: "#b3ffff",
+      borderRadius: 15,
+      border: "1px dotted black",  
+      marginTop: 30,
+      fontFamily: 'Indie Flower'
+    }
+    var myStyle3_2 = {
+      color: "#000066",
+      fontSize: 30
+    }
+
     return (
       <div class="container-fluid">
         <div class="row">
-          <div style={myStyle2} class="col-sm-4 col-sm-offset-4">
-            <h2 class="text-left" style={myStyle1}>Just Do It !!!</h2>
+          <div class="col-sm-4" style={myStyle1_1}>
+            <h2 class="text-left" style={myStyle1_2}>Yesterday: &nbsp;&nbsp;Is just gone.</h2>
+            <h4>No point in looking back...</h4>
+            <img class="thumbnail" src={coconuts} width="200"/>
+          </div>
+          <div class="col-sm-4" style={myStyle2_1}>
+            <h2 class="text-left" style={myStyle2_2}>So today: &nbsp;&nbsp;Just Do It!</h2>
             <CreateTodo createTask={this.createTask.bind(this)}/>
             &nbsp;
             <TodosList 
@@ -56,6 +90,12 @@ class App extends React.Component {
               saveTask={this.saveTask.bind(this)}
               deleteTask={this.deleteTask.bind(this)}
             />
+            <img class="thumbnail" src={sun} width="230"/>
+          </div>
+          <div class="col-sm-4" style={myStyle3_1}>
+            <h2 class="text-left" style={myStyle3_2}>Tomorrow: &nbsp;&nbsp;Never ever comes.</h2>
+            <h4>No point in daydreaming either...</h4>
+            <img class="thumbnail" src={moons} width="150"/>
           </div>
         </div>
       </div>

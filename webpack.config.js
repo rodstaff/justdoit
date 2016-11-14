@@ -21,6 +21,9 @@ module.exports = {
           presets: ['react', 'es2015'],
           plugins: ['react-html-attrs']
         }
+      },
+      { test: /\.(png|jpg|jpeg|gif|woff)$/, 
+        loader: 'url-loader?limit=1000000' 
       }
     ]
   }
