@@ -81,7 +81,7 @@ class App extends React.Component {
             <img class="thumbnail" src={coconuts} width="200"/>
           </div>
           <div class="col-sm-4" style={myStyle2_1}>
-            <h2 class="text-left" style={myStyle2_2}>So today: &nbsp;&nbsp;Just Do It!</h2>
+            <h2 class="text-left" style={myStyle2_2}>so Today: &nbsp;&nbsp;Just do it!</h2>
             <CreateTodo createTask={this.createTask.bind(this)}/>
             &nbsp;
             <TodosList 
