@@ -270,7 +270,7 @@ const TodosListFooter = () => {
   return (
     <div>
      <p></p>
-     <h5>Status: Green = "done"; Red = "pending". &nbsp;&nbsp;Click on task to change status.</h5>
+     <h5>Status: &nbsp;&nbsp;Green = "done"; Red = "pending". &nbsp;&nbsp;Click on task to change status.</h5>
     </div>
   );
 }
