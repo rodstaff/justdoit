@@ -78,7 +78,12 @@ class App extends React.Component {
           <div class="col-sm-4" style={myStyle1_1}>
             <h2 class="text-left" style={myStyle1_2}>Yesterday: &nbsp;&nbsp;Is just gone.</h2>
             <h4>No point in looking back...</h4>
-            <img class="thumbnail" src={coconuts} width="200"/>
+            <img class="thumbnail" src={coconuts} width="150"/>
+          </div>
+          <div class="col-sm-4" style={myStyle3_1}>
+            <h2 class="text-left" style={myStyle3_2}>Tomorrow: &nbsp;&nbsp;Never ever comes.</h2>
+            <h4>No point in daydreaming either...</h4>
+            <img class="thumbnail" src={moons} width="240"/>
           </div>
           <div class="col-sm-4" style={myStyle2_1}>
             <h2 class="text-left" style={myStyle2_2}>so Today: &nbsp;&nbsp;Just do it!</h2>
@@ -90,12 +95,7 @@ class App extends React.Component {
               saveTask={this.saveTask.bind(this)}
               deleteTask={this.deleteTask.bind(this)}
             />
-            <img class="thumbnail" src={sun} width="230"/>
-          </div>
-          <div class="col-sm-4" style={myStyle3_1}>
-            <h2 class="text-left" style={myStyle3_2}>Tomorrow: &nbsp;&nbsp;Never ever comes.</h2>
-            <h4>No point in daydreaming either...</h4>
-            <img class="thumbnail" src={moons} width="150"/>
+            <img class="thumbnail" src={sun} width="240"/>
           </div>
         </div>
       </div>
