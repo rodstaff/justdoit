@@ -87,6 +87,7 @@ class App extends React.Component {
           </div>
           <div class="col-sm-4" style={myStyle2_1}>
             <h2 class="text-left" style={myStyle2_2}>so Today: &nbsp;&nbsp;Just do it!</h2>
+            <img class="thumbnail" src={sun} width="240"/>
             <CreateTodo createTask={this.createTask.bind(this)}/>
             &nbsp;
             <TodosList 
@@ -95,7 +96,6 @@ class App extends React.Component {
               saveTask={this.saveTask.bind(this)}
               deleteTask={this.deleteTask.bind(this)}
             />
-            <img class="thumbnail" src={sun} width="240"/>
           </div>
         </div>
       </div>
