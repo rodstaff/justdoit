@@ -37,7 +37,10 @@ class App extends React.Component {
     this.setState({todos: this.state.todos});
   }
   render () {
-
+    var myStyle1_0 = {
+      fontFamily: 'Dosis',
+      fontSize: 35
+    }
     var myStyle1_1 = {
       backgroundColor: "#ccffcc",
       borderRadius: 15,
@@ -73,6 +76,8 @@ class App extends React.Component {
     }
 
     return (
+    <div>
+      <h1 class="text-center" style={myStyle1_0}><strong>This day is the beginning of the rest of your life.</strong></h1>
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-4" style={myStyle1_1}>
@@ -99,6 +104,7 @@ class App extends React.Component {
           </div>
         </div>
       </div>
+    </div>
     );
   }
 }
