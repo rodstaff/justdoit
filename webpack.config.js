@@ -9,7 +9,7 @@ module.exports = {
   	publicPath: '/',   
   	filename: 'bundle.js',  
   	host: '0.0.0.0',
-  	port: 8087
+  	port: 8081
   },
     module: {
     loaders: [

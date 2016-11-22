@@ -38,7 +38,7 @@ class App extends React.Component {
   }
   render () {
     var myStyle1_0 = {
-      fontFamily: 'Dosis',
+      fontFamily: 'Oswald',
       fontSize: 35
     }
     var myStyle1_1 = {
@@ -77,7 +77,7 @@ class App extends React.Component {
 
     return (
     <div>
-      <h1 class="text-center" style={myStyle1_0}><strong>This day is the beginning of the rest of your life.</strong></h1>
+      <h1 class="text-center" style={myStyle1_0}>This day is the beginning of the rest of your life:&nbsp;&nbsp;Rejoice!</h1>
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-4" style={myStyle1_1}>
