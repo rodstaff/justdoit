@@ -42,7 +42,8 @@ class App extends React.Component {
       fontSize: 35
     }
     var myStyle1_1 = {
-      backgroundColor: "#ccffcc",
+      //backgroundColor: "#ccffcc",
+      backgroundColor: "#87CEEB",
       borderRadius: 15,
       border: "1px dashed black",  
       marginTop: 30,
@@ -53,18 +54,21 @@ class App extends React.Component {
       fontSize: 30
     }
     var myStyle2_1 = {
-      backgroundColor: "#ffd9cc",
+      // backgroundColor: "#ffd9cc",
+      backgroundColor: "#FFCC00",
       borderRadius: 15,
       border: "1px double black",  
       marginTop: 30,
       fontFamily: 'Oswald'
     }
     var myStyle2_2 = {
-      color: "#000066",
+    //  color: "#000066",
+      color: "#ffffff",
       fontSize: 30
     }
     var myStyle3_1 = {
-      backgroundColor: "#b3ffff",
+      //backgroundColor: "#b3ffff",
+      backgroundColor: "#33A1C9",
       borderRadius: 15,
       border: "1px dotted black",  
       marginTop: 30,
@@ -77,7 +81,7 @@ class App extends React.Component {
 
     return (
     <div>
-      <h1 class="text-center" style={myStyle1_0}>This day is the beginning of the rest of your life:&nbsp;&nbsp;Rejoice!</h1>
+      <h1 class="text-center" style={myStyle1_0}>This day is the beginning of the rest of your life:&nbsp;&nbsp;It's a golden opportunity!</h1>
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-4" style={myStyle1_1}>
@@ -91,8 +95,8 @@ class App extends React.Component {
             <img class="thumbnail" src={moons} width="240"/>
           </div>
           <div class="col-sm-4" style={myStyle2_1}>
-            <h2 class="text-left" style={myStyle2_2}>so Today: &nbsp;&nbsp;Just do it!</h2>
-            <img class="thumbnail" src={sun} width="240"/>
+            <h2 class="text-left" style={myStyle2_2}>so Today: &nbsp;&nbsp;Just do it !</h2>
+            <img class="thumbnail" src={sun} width="245"/>
             <CreateTodo createTask={this.createTask.bind(this)}/>
             &nbsp;
             <TodosList 
