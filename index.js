@@ -81,7 +81,7 @@ class App extends React.Component {
 
     return (
     <div>
-      <h1 class="text-center" style={myStyle1_0}>This day is the beginning of the rest of your life:&nbsp;&nbsp;It's a golden opportunity!</h1>
+      <h1 class="text-center" style={myStyle1_0}>This day is the beginning of the rest of your life:&nbsp;&nbsp;Rejoice!</h1>
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-4" style={myStyle1_1}>
